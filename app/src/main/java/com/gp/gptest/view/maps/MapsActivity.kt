@@ -80,8 +80,8 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         vm.stopWorker()
     }
 
-    override fun onStop() {
-        super.onStop()
+    override fun onDestroy() {
+        super.onDestroy()
         vm.runWorker()
     }
 
