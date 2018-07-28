@@ -8,7 +8,7 @@ import android.content.Context
 /**
  *  Created by artem on 25.07.2018.
  */
-@Database(entities = arrayOf(LocationHistory::class), version = 3)
+@Database(entities = arrayOf(LocationHistory::class), version = 1)
 abstract class LocationHistoryDataBase : RoomDatabase() {
     abstract fun locationHistoryDao(): LocationHistoryDao
 
@@ -24,6 +24,10 @@ abstract class LocationHistoryDataBase : RoomDatabase() {
                             .build()
                 }
             }
+            return instance!!
+        }
+
+        fun getInstance():LocationHistoryDataBase {
             return instance!!
         }
 
